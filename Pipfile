@@ -11,6 +11,8 @@ django = "==2.2"
 whitenoise = "*"
 django-heroku = "*"
 gunicorn = "*"
+django-markdownx = "*"
+markdownify = "*"
 
 [requires]
 python_version = "3.7"

@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <section class="section">
+      <div class="post grid">
+          {% if post.published_date %}
+            <div>
+                {{ post.published_date }}
+            </div>
+          {% endif %}
+          <h2 class="subtitle">{{ post.title }}</h2>
+          <div class="content">{{ post.formatted_markdown|safe }}</div>
+      </div>
+    </section>
+
+{% endblock %}
