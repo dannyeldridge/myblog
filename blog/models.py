@@ -12,7 +12,7 @@ class Post(models.Model):
     title = models.CharField(max_length=200)
     text = MarkdownxField(blank=True, null=True)
     created_date = models.DateField(default=datetime.date.today)
-    published_date = models.DateField(blank=True, null=True)
+    published_date = models.DateField(default=datetime.date.today)
 
     # Create a property that returns the markdown instead
     @property
