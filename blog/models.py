@@ -3,7 +3,6 @@ from django.utils import timezone
 from django.conf import settings
 from markdownx.models import MarkdownxField
 from markdownx.utils import markdownify
-import datetime
 
 class Post(models.Model):
     """docstring for Post."""
@@ -11,8 +10,8 @@ class Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     text = MarkdownxField(blank=True, null=True)
-    created_date = models.DateField(default=datetime.date.today)
-    published_date = models.DateField(default=datetime.date.today)
+    created_date = models.DateTimeField(default=timezone.now)
+    published_date = models.DateTimeField(blank=True, null=True)
 
     # Create a property that returns the markdown instead
     @property

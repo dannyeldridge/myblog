@@ -6,7 +6,7 @@
           {% for post in posts %}
           <div>
               <br>
-              <p>{{ post.published_date }}</p>
+              <p>{{ post.published_date.date }}</p>
                 <h2 class="subtitle"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
               <div class="content">{{ post.formatted_markdown|safe }}</div>
               <br>
